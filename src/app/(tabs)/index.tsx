@@ -1,4 +1,3 @@
-import { BottomSheet, Button, Column, Host, Text } from "@expo/ui";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { Text as RNText, StyleSheet, View } from "react-native";
@@ -11,23 +10,6 @@ export default function Index() {
       <RNText style={styles.title}>Hello World</RNText>
 
       <Link href={"/about"}>Go to about</Link>
-
-      <Host matchContents>
-        <Column>
-          {/* <Button onClick={() => console.log("Pressed!")}>
-            <Text>Hello</Text>
-          </Button> */}
-
-          <Button label="Open Modal" onPress={() => setIsOpened(true)} />
-
-          <BottomSheet
-            isPresented={isOpened}
-            onDismiss={() => setIsOpened(false)}
-          >
-            <Text>Hello, Modal!</Text>
-          </BottomSheet>
-        </Column>
-      </Host>
     </View>
   );
 }
